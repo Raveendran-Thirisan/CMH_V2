@@ -1,6 +1,16 @@
-/** @type {import('next').NextConfig} */
+// next.config.mjs
+
 const nextConfig = {
-  reactStrictMode: true,
+  // Your Next.js configuration options
+  // reactStrictMode: true,
 };
 
-export default nextConfig;
+const webpackDevMiddleware = (config) => {
+  config.watchOptions = {
+    poll: 1000,
+    aggregateTimeout: 300,
+  };
+  return config;
+};
+
+export { nextConfig, webpackDevMiddleware };
