@@ -11,7 +11,7 @@ COPY package*.json ./
 RUN npm install
 
 # Copier tout le reste des fichiers du projet dans le répertoire de travail du conteneur
-COPY . .
+COPY .
 
 # Exposer le port 3000 utilisé par Next.js
 EXPOSE 3000
