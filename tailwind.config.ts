@@ -15,7 +15,8 @@ const config: Config = {
     extend: {
       colors:{
         'custom-purple': '#320D3E',
-        'custom-yellow' : '#FFC973'
+        'custom-yellow' : '#FFC973',
+        'custom-pink' : '#C859BA'
       },
     },
   },
