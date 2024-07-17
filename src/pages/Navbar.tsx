@@ -6,10 +6,17 @@ import { FaBars } from 'react-icons/fa6';
 
 
 const Navbar2 = () => {
-  const [open , setOpen] = useState(false);
+  const [open, setOpen] = useState(false);
+
+  const HandleMenu = () => {
+    setOpen((prev) => !prev);
+    console.log(open);
+    
+  }
+
   return (
     <nav className='bg-custom-purple fixed z-50 top-0 w-full h-18'>
-      <div className='mx-auto px-7 sm:px-6 lg:px-8'>
+      <div className='mx-auto px-7 lg:px-8'>
         <div className='flex items-center justify-between'>
           {/* Logo and Navlinks */}
           <div className='flex items-center text-white'>
@@ -34,21 +41,24 @@ const Navbar2 = () => {
               ))}
             </div>
           </div>
+          {/* Se connecter button and search bar */}
           <div className='flex'>
             <Seconnecter />
             <BarreDeRecherche />
           </div>
-          <div className="-mr-2 flex md:hidden">
-        <button>
-          <span className='sr-only'> Ouvrir le menu</span>
-          {open ? <FaTimes /> : <FaBars />}
-          </button>
-      </div>
+          {/* Mobile menu button */}
+          <div className='-mr-2 flex  md:hidden'>
+            <button type='button' onClick={HandleMenu} className='inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white'>
+              <span className='sr-only'>Ouvrir le menu</span>
+              {open ? <FaTimes className='sm:w-5 sm:h-5'/> : <FaBars className='sm:w-5 sm:h-5' />}
+            </button>
+          </div>
         </div>
       </div>
     </nav>
   );
 };
+
 
 const Navlinks = [
   {
